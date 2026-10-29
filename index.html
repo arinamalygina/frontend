@@ -22,7 +22,7 @@
         async function sendData() {
             const text = document.getElementById('textInput').value;
             
-            const response = await fetch('http://localhost:5000/submit', {
+            const response = await fetch('http://backend:5000/submit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ text: text })
@@ -33,7 +33,7 @@
         }
         
         async function readData() {
-            const response = await fetch('http://localhost:5000/read');
+            const response = await fetch('http://backend:5000/read');
             const data = await response.json();
             document.getElementById('readResult').value = data.content;
         }
